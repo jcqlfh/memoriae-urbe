@@ -1,25 +1,83 @@
 @use 'sass:color';
-
 @use '@material/theme/color-palette';
-
 // Svelte Colors!
-@use '@material/theme/index' as theme with (
-  $primary: #ff3e00,
-  $secondary: #676778,
-  $surface: #fff,
-  $background: #fff,
-  $error: color-palette.$red-900
-);
+@use '@material/theme/index' as theme with ( $primary: #FFF2AF, $secondary: #D1F2D0, $surface: #FFF, $background: #FFF, $error: color-palette.$red-900);
+$grey: #F2F2F2;
+* {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background: url('map-min.png');
+    box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.7);
+    background-size: auto;
+}
 
 html,
 body {
-  background-color: theme.$surface;
-  color: theme.$on-surface;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: "Roboto";
+    color: theme.$on-surface;
+    display: flex;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px;
 }
 
 a {
-  color: #40b3ff;
+    color: #40b3ff;
 }
+
 a:visited {
-  color: color.scale(#40b3ff, $lightness: -35%);
+    color: color.scale(#40b3ff, $lightness: -35%);
 }
+
+article {
+    display: flex;
+    background-color: theme.$secondary;
+    width: 90%;
+    min-height: min-content;
+    margin: 10px;
+    overflow-wrap: anywhere;
+}
+
+.container {
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    flex: 1;
+    margin: 10px;
+    overflow: auto;
+}
+
+.shadow {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.julius {
+    font-family: "Julius Sans One" !important;
+}
+
+.grey {
+    background-color: $grey !important;
+}
+
+@media (max-width: 700px) {}
