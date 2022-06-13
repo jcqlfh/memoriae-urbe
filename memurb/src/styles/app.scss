@@ -1,8 +1,8 @@
 @use 'sass:color';
-@use '@material/theme/color-palette';
-// Svelte Colors!
-@use '@material/theme/index' as theme with ( $primary: #FFF2AF, $secondary: #D1F2D0, $surface: #FFF, $background: #FFF, $error: color-palette.$red-900);
-$grey: #F2F2F2;
+@use 'theme' as theme;
+@import '@material/top-app-bar/_index.scss';
+@import '@material/menu/_index.scss';
+@import '@material/menu-surface/_index.scss';
 * {
     background-color: rgba(255, 255, 255, 0);
     padding: 0;
@@ -44,6 +44,7 @@ a:visited {
 
 article {
     display: flex;
+    flex-direction: column;
     background-color: theme.$secondary;
     width: 90%;
     min-height: min-content;
@@ -77,5 +78,5 @@ article {
 }
 
 .grey {
-    background-color: $grey !important;
+    background-color: theme.$grey !important;
 }
