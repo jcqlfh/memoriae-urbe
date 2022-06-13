@@ -1,8 +1,5 @@
 @use 'sass:color';
 @use 'theme' as theme;
-@import '@material/top-app-bar/_index.scss';
-@import '@material/menu/_index.scss';
-@import '@material/menu-surface/_index.scss';
 * {
     background-color: rgba(255, 255, 255, 0);
     padding: 0;

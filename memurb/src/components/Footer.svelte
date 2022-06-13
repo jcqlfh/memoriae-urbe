@@ -1,21 +1,16 @@
-<TopAppBar
-    variant="static"
-    dense
-    class="grey"
->
-  <Row>
+<AppBar>
+  <div slot="icon">
     {#if (showLink)}
-      <Section>
-            <Icon class="material-icons">chevron_left</Icon>
-            <a href="{path}">{text}</a>
-      </Section>
+    <Button fab depressed>
+      <Icon path={'/logo.png'} />
+      <a href="{path}">{text}</a>
+    </Button>
     {/if}
-  </Row>
-</TopAppBar>
+  </div>
+</AppBar>
 
 <script lang="ts">
-    import TopAppBar, { Row, Section } from '@smui/top-app-bar';
-    import { Icon } from '@smui/common';
+    import { AppBar, Button, Icon, Menu, ListItem, MaterialApp } from 'svelte-materialify';
 
     export let showLink = false;
     export let path = "/";
