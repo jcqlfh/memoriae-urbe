@@ -33,7 +33,6 @@
     },
     "type": "module",
     "dependencies": {
-        "markdown-it": "^13.0.0",
         "punycode": "^2.1.1",
         "svelte-materialify": "^0.3.11"
     }
