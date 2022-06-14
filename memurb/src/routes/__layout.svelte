@@ -1,12 +1,14 @@
 <MaterialApp>
-    <div class="header">
-        <Header/>
-    </div>
-    <div class="main">
-        <slot></slot>
-    </div>
-    <div class="footer">
-        <Footer/>
+    <div class="container">
+        <div class="header">
+            <Header/>
+        </div>
+        <div class="main">
+            <slot></slot>
+        </div>
+        <div class="footer">
+            <Footer/>
+        </div>
     </div>
 </MaterialApp>
 

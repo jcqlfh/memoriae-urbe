@@ -1,7 +1,7 @@
 <AppBar>
   <div slot="icon">
     <Button fab depressed>
-      <Icon path={'/logo.png'} />
+      <Avatar tile><img src="/logo.png" alt="Logo"/></Avatar>
     </Button>
   </div>
   <span slot="title" class="julius"><strong>Memoriae Urbe</strong></span>
@@ -22,7 +22,7 @@
 </AppBar>
 
 <script lang="ts">
-    import { AppBar, Button, Icon, Menu, ListItem, MaterialApp } from 'svelte-materialify';
+    import { AppBar, Button, Icon, Menu, ListItem, Avatar } from 'svelte-materialify';
 
     
     let anchor: HTMLDivElement;
