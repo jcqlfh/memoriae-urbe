@@ -1,10 +1,10 @@
 <AppBar>
   <div slot="icon">
     <Button fab depressed>
-      <Avatar tile><img src="/logo.png" alt="Logo"/></Avatar>
+      <Avatar tile><img src="/images/logo.png" alt="Logo"/></Avatar>
     </Button>
   </div>
-  <span slot="title" class="julius"><strong>Memoriae Urbe</strong></span>
+  <span slot="title" class="font-julius"><strong>Memoriae Urbe</strong></span>
   <div style="flex-grow:1" />
   {#if (showMenu)}
   <Menu right>

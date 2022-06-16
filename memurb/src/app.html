@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
+    <title>Memoriae Urbe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -12,6 +14,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Julius+Sans+One" />
     <!-- Julius Sans One  -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" /> %svelte.head%
+    <!-- Google Auth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="google-signin-client_id" content="">
+    <script language="JavaScript" type="text/javascript" src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
+    <script>
+        function handleCredentialResponse(CredentialResponse) {
+            try {
+                var cred = CredentialResponse.credential;
+                console.log(cred);
+                var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));;
+                console.log(payload);
+                console.log('ID: ' + payload.sub); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + payload.name);
+                console.log('Image URL: ' + payload.picture);
+                console.log('Email: ' + payload.email); // This is null if the 'email' scope is not present.
+                window.location = "/home.html";
+            } catch {
+                console.log("erro ao logar");
+            }
+        }
+    </script>
 </head>
 
 <body>
