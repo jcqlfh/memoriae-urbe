@@ -11,6 +11,5 @@
 
 
 <script lang="ts">
-    // @ts-ignore
     import FortalezaContent from '/src/content/cities/fortaleza/FortalezaContent.md';
 </script>

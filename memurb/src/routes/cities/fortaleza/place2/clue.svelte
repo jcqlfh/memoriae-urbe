@@ -5,6 +5,5 @@
 </article>
 
 <script lang="ts">
-    // @ts-ignore
     import Clue from '/src/content/cities/fortaleza/place2/clue.md';
 </script>

@@ -5,6 +5,5 @@
 </article>
 
 <script lang="ts">
-    // @ts-ignore
     import Place from '/src/content/cities/fortaleza/place4/Place.md';
 </script>
