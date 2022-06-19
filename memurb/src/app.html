@@ -29,7 +29,7 @@
                 console.log('Name: ' + payload.name);
                 console.log('Image URL: ' + payload.picture);
                 console.log('Email: ' + payload.email); // This is null if the 'email' scope is not present.
-                window.location = "/home.html";
+                window.location.assign('/home.html');
             } catch {
                 console.log("erro ao logar");
             }

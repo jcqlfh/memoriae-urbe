@@ -1,4 +1,4 @@
 <h2 class="font-julius">Cidades</h2>
 <ul>
-    <li class="city shadow"><a href="/fortaleza.html">Fortaleza</a></li>
+    <li class="city shadow"><a href="/cities/fortaleza">Fortaleza</a></li>
 </ul>

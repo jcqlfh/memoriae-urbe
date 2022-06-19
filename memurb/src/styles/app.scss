@@ -47,6 +47,9 @@ article {
     padding: 20px;
     overflow-wrap: anywhere;
     border-radius: 5px;
+    img {
+        width: 100%;
+    }
 }
 
 ul {
@@ -79,7 +82,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background: url('/map-min.png');
+    background: url('/images/map-min.webp');
     box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.7);
     background-size: auto;
 }

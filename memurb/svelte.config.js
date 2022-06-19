@@ -7,10 +7,10 @@ const config = {
     // Consult https://github.com/sveltejs/svelte-preprocess
     // for more information about preprocessors
     kit: {
-        adapter: adapter(),
         prerender: {
             default: true,
         },
+        adapter: adapter({ trailingSlash: 'always' }),
 
     },
     extensions: ['.svelte', '.md'],
