@@ -1,9 +1,10 @@
 <h2 class="font-julius">Ponte dos ingleses</h2>
 
-<article>
+<CollapsableArticle>
     <Place/>
-</article>
+</CollapsableArticle>
 
 <script lang="ts">
+    import CollapsableArticle from '../../../../components/CollapsableArticle.svelte';
     import Place from '../../../../content/cities/fortaleza/place3/Place.md';
 </script>

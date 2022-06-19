@@ -1,7 +1,7 @@
 <h2 class="font-julius">Fortaleza</h2>
-<article>
+<CollapsableArticle>
     <FortalezaContent/>
-</article>
+</CollapsableArticle>
 <ul class="grid">
     <li class="place shadow"><a href="/cities/fortaleza/place1/clue">Lugar #1</a></li>
     <li class="place shadow"><a href="/cities/fortaleza/place2/clue">Lugar #2</a></li>
@@ -11,5 +11,6 @@
 
 
 <script lang="ts">
+    import CollapsableArticle from '../../components/CollapsableArticle.svelte';
     import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
 </script>

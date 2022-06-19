@@ -1,9 +1,10 @@
 <h2 class="font-julius">Teatro José de Alencar</h2>
 
-<article>
+<CollapsableArticle>
     <Place/>
-</article>
+</CollapsableArticle>
 
 <script lang="ts">
+    import CollapsableArticle from '../../../../components/CollapsableArticle.svelte';
     import Place from '../../../../content/cities/fortaleza/place4/Place.md';
 </script>

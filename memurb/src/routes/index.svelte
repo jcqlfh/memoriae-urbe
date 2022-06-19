@@ -1,5 +1,5 @@
 <h2 class="font-julius">Bem-vindos</h2>
-<article class="shadow" >
+<article class="shadow">
   <WelcomeContent/>
 </article>
 <div class="button-area">
@@ -22,4 +22,6 @@
   import { Button } from 'svelte-materialify';
   import { show } from './show';
   show.update(value => false);
+
+  var contentCollapsedClass = "content collapsed";
 </script>
