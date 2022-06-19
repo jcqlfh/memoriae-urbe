@@ -11,7 +11,7 @@ jobs:
       run: |
         cd memurb
         npm install
-        npm run build --if-present
+        npm run build
     - name: ftp-action
       # You may pin to the exact commit or the version.
       # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
