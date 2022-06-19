@@ -15,11 +15,24 @@ const config = {
     },
     extensions: ['.svelte', '.md'],
     preprocess: [
-        preprocess(),
         mdsvex({
             extensions: ['.md']
-        })
+        }),
+        preprocess(),
     ],
 };
 
+function markdown() {
+    return {
+        name: 'markdown',
+        transform(content, filename) {
+            if (filename.endsWith('.md')) {
+                content = marked(content)
+                return {
+                    code: 'export default ${JSON.stringify(content)}',
+                }
+            } else return null
+        },
+    }
+}
 export default config;
