@@ -3,6 +3,6 @@
 
 
 <script lang="ts">
-    import { show } from './show';
-    show.update(value => false);
+    import { showHeaderFooter } from '../state/showHeaderFooter';
+    showHeaderFooter.update(value => false);
 </script>

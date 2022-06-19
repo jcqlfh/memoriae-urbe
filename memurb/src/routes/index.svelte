@@ -20,8 +20,8 @@
 <script lang="ts">
   import WelcomeContent from '../content/WelcomeContent.md';
   import { Button } from 'svelte-materialify';
-  import { show } from './show';
-  show.update(value => false);
+  import { showHeaderFooter } from '../state/showHeaderFooter';
+  showHeaderFooter.update(value => false);
 
   var contentCollapsedClass = "content collapsed";
 </script>

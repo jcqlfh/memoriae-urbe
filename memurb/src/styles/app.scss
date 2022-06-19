@@ -62,7 +62,8 @@
                 --theme-surface: rgba(255, 255, 255, 0) !important;
                 width: 100%;
             }
-            .s-menu {
+            .s-menu,
+            .s-dialog {
                 background-color: theme.$grey !important;
             }
             .header {

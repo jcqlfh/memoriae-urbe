@@ -13,8 +13,8 @@
           <Icon path={mdiDotsVertical} />
         </Button>
       </div>
-      <ListItem><a href='/'>Home</a></ListItem>
-      <ListItem>Como jogar</ListItem>
+      <ListItem on:click={() => window.location.assign("/home.html")}>Home</ListItem>
+      <ListItem on:click={() => showHowToPlay.set(true)}>Como jogar</ListItem>
       <ListItem>Sair</ListItem>
     </Menu>
   {/if}
@@ -24,6 +24,6 @@
 <script lang="ts">
     import { AppBar, Button, Icon, Menu, ListItem, Avatar } from 'svelte-materialify';
     import { mdiDotsVertical } from '@mdi/js';
-    
+    import { showHowToPlay } from '../state/showHowToPlay';
     export let showMenu = false;
 </script>
