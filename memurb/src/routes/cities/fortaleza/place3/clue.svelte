@@ -5,5 +5,5 @@
 </article>
 
 <script lang="ts">
-    import Clue from '/src/content/cities/fortaleza/place3/clue.md';
+    import Clue from '../../../../content/cities/fortaleza/place3/clue.md';
 </script>
