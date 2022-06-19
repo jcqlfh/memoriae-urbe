@@ -4,7 +4,7 @@
 </article>
 <div class="button-area">
   <div class="flex-column-center">
-    <Button icon size="large" class="red">
+    <Button icon size="large" class="red" on:click={() => document.location='/thanks.html'}>
       <img class="icon-button filter-white" src="/images/placeholder.svg" alt="button"/>
     </Button>
     <span>Rejeitar</span>
