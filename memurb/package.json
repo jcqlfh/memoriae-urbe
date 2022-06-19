@@ -33,6 +33,7 @@
     },
     "type": "module",
     "dependencies": {
+        "@mdi/js": "^6.7.96",
         "punycode": "^2.1.1",
         "svelte-materialify": "^0.3.11"
     }

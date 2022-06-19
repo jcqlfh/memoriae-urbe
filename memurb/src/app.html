@@ -25,7 +25,6 @@
                 console.log(cred);
                 var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));;
                 console.log(payload);
-                console.log('ID: ' + payload.sub); // Do not send to your backend! Use an ID token instead.
                 console.log('Name: ' + payload.name);
                 console.log('Image URL: ' + payload.picture);
                 console.log('Email: ' + payload.email); // This is null if the 'email' scope is not present.

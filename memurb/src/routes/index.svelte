@@ -19,6 +19,8 @@
 
 <script lang="ts">
   // @ts-ignore
-import WelcomeContent from '../content/WelcomeContent.md';
-import { Button } from 'svelte-materialify';
+  import WelcomeContent from '../content/WelcomeContent.md';
+  import { Button } from 'svelte-materialify';
+  import { show } from './show.js';
+  show.update(value => false);
 </script>

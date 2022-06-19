@@ -1,18 +1,17 @@
 <Footer>
-  <div slot="icon">
-    {#if (showLink)}
-    <Button fab depressed>
-      <Icon path='/logo.png' />
+  {#if (showLink)}
+    <Button depressed>
+      <Icon path="{mdiChevronLeft}" />
       <a href="{path}">{text}</a>
     </Button>
     {/if}
-  </div>
 </Footer>
 
 <script lang="ts">
-    import { Footer , Button, Icon, Menu, ListItem, MaterialApp } from 'svelte-materialify';
+    import { Footer , Button, Icon } from 'svelte-materialify';
+    import { mdiChevronLeft } from '@mdi/js';
 
     export let showLink = false;
-    export let path = "/";
+    export let path = "../";
     export let text = "Voltar";
 </script>
