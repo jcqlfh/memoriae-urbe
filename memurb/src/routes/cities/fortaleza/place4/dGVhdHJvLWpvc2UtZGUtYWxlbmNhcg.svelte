@@ -1,9 +1,10 @@
-<h2 class="font-julius">Teatro José de Alencar</h2>
+<h2 class="font-julius">Você encontrou!</h2>
 
-<article>
-    <Place/>
-</article>
+<ul class="grid">
+    <li><a href="teatro-jose-de-alencar"><img src="/images/pictures/fortaleza/place4/1.webp"/></a></li>
+</ul>
+
+<h4 class="font-julius">Parabéns!</h4>
 
 <script lang="ts">
-    import Place from '../../../../content/cities/fortaleza/place4/Place.md';
 </script>

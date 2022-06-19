@@ -1,9 +1,10 @@
-<h2 class="font-julius">Ponte dos ingleses</h2>
+<h2 class="font-julius">Você encontrou!</h2>
 
-<article>
-    <Place/>
-</article>
+<ul class="grid">
+    <li><a href="ponte-dos-ingleses"><img src="/images/pictures/fortaleza/place3/1.webp"/></a></li>
+</ul>
+
+<h4 class="font-julius">Parabéns!</h4>
 
 <script lang="ts">
-    import Place from '../../../../content/cities/fortaleza/place3/Place.md';
 </script>

@@ -56,6 +56,7 @@
             }
             ul {
                 list-style: none;
+                padding: 0;
             }
             .s-app,
             .theme--light {
@@ -104,6 +105,7 @@
             }
             .font-julius {
                 font-family: "Julius Sans One" !important;
+                text-align: center;
             }
             .filter {
                 &-blue {
@@ -187,6 +189,9 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
+                img {
+                    width: 100%;
+                }
             }
         }
     }
