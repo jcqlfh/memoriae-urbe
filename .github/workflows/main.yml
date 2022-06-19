@@ -7,10 +7,6 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3.3.0
-      with:
-          node-version: 17
     - name: build-action
       run: |
         cd memurb
