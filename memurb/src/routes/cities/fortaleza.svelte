@@ -11,5 +11,5 @@
 
 
 <script lang="ts">
-    import FortalezaContent from '../content/cities/fortaleza/FortalezaContent.md';
+    import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
 </script>
