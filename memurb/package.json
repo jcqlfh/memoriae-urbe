@@ -21,7 +21,6 @@
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-svelte3": "^3.2.1",
-        "mdsvex": "^0.10.6",
         "prettier": "^2.5.1",
         "prettier-plugin-svelte": "^2.5.0",
         "sass": "^1.52.3",
@@ -34,6 +33,7 @@
     "type": "module",
     "dependencies": {
         "@mdi/js": "^6.7.96",
+        "mdsvex": "^0.10.6",
         "punycode": "^2.1.1",
         "svelte-materialify": "^0.3.11"
     }
