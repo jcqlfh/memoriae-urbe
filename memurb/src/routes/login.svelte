@@ -10,7 +10,8 @@
     </div>
     <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
 <script lang="ts">
+    // @ts-ignore
     import NewUserContent from '/src/content/NewUserContent.md';
-    import { show } from './show.js';
+    import { show } from './show';
     show.update(value => false);
 </script>

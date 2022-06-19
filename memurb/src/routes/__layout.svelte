@@ -17,7 +17,7 @@
     import { MaterialApp } from 'svelte-materialify';
     import Footer from "../components/Footer.svelte";
     import Header from "../components/Header.svelte";
-    import { show } from './show.js';
+    import { show } from './show';
     let showValue:boolean;
 
 	show.subscribe(value => {

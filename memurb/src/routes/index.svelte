@@ -18,9 +18,8 @@
 </div>
 
 <script lang="ts">
-  // @ts-ignore
   import WelcomeContent from '../content/WelcomeContent.md';
   import { Button } from 'svelte-materialify';
-  import { show } from './show.js';
+  import { show } from './show';
   show.update(value => false);
 </script>

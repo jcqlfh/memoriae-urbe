@@ -3,8 +3,6 @@
 
 
 <script lang="ts">
-    // @ts-ignore
-    import { show } from './show.js';
-    // @ts-ignore
+    import { show } from './show';
     show.update(value => false);
 </script>
