@@ -6,13 +6,6 @@ import { mdsvex } from 'mdsvex'
 const config = {
     // Consult https://github.com/sveltejs/svelte-preprocess
     // for more information about preprocessors
-    kit: {
-        prerender: {
-            default: true,
-        },
-        adapter: adapter({ trailingSlash: 'always' }),
-
-    },
     extensions: ['.svelte', '.md'],
     preprocess: [
         mdsvex({
@@ -20,5 +13,12 @@ const config = {
         }),
         preprocess(),
     ],
+    kit: {
+        prerender: {
+            default: true,
+        },
+        adapter: adapter({ trailingSlash: 'always' }),
+
+    },
 };
 export default config;
