@@ -32,4 +32,7 @@
 		showHowToValue = value;
 	});
 
+    let user = localStorage.getItem('MEMURB_USER');
+    if(!user)
+        window.location.assign('/');
 </script>

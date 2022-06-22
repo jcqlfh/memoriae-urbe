@@ -21,17 +21,38 @@
     <script>
         function handleCredentialResponse(CredentialResponse) {
             try {
+                // Get credential and payload
                 var cred = CredentialResponse.credential;
-                console.log(cred);
                 var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));;
-                console.log(payload);
-                console.log('Name: ' + payload.name);
-                console.log('Image URL: ' + payload.picture);
-                console.log('Email: ' + payload.email); // This is null if the 'email' scope is not present.
+                // Gets or creates the user
+                var user = getUser(payload)
+                if (!user)
+                    user = createUser(payload);
+
+                updateStorage(user);
+                // Redirects
                 window.location.assign('/home.html');
             } catch {
                 console.log("erro ao logar");
             }
+        }
+
+        function getUser(payload) {
+            return {
+                name: payload.name,
+                email: payload.email
+            };
+        }
+
+        function createUser(payload) {
+            return {
+                name: payload.name,
+                email: payload.email
+            };
+        }
+
+        function updateStorage(user) {
+            localStorage.setItem("MEMURB_USER", user);
         }
     </script>
 </head>
