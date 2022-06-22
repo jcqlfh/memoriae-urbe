@@ -21,7 +21,13 @@
   import WelcomeContent from '../content/WelcomeContent.md';
   import { Button } from 'svelte-materialify';
   import { showHeaderFooter } from '../state/showHeaderFooter';
+  import { onMount } from 'svelte';
+
   showHeaderFooter.update(value => false);
 
-  var contentCollapsedClass = "content collapsed";
+  onMount(() => {
+        let user = localStorage.getItem('MEMURB_USER');
+        if(user)
+          window.location.assign('/home.html');
+    });
 </script>
