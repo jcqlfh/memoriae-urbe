@@ -2,7 +2,7 @@
     <div class={`content ${collapsed ? 'collapsed' : ''}`}>
         <slot></slot>
     </div>
-    <div class="collapseButtonArea"><Button size="small" on:click={() => collapsed = !collapsed }>
+    <div class="collapseButtonArea"><Button text size="small" on:click={() => collapsed = !collapsed }>
         {#if (collapsed)}
             mais <Icon path={mdiChevronDoubleDown}></Icon>
         {:else}
