@@ -10,6 +10,11 @@
                         Jogar este jogo é muito simples. Primeiro você deve escolher uma cidade
                     </p>
                 </Col>
+                <Col>
+                    <p>
+                        <Button on:click={() => showHowToPlay.set(false)} icon><Icon path="{mdiPlus}"></Icon></Button>
+                    </p>
+                </Col>
             </Row>
             <Row>
                 <Col>
@@ -59,7 +64,7 @@
         
         </CardText>
         <CardActions class="justify-end">
-        <Button on:click={() => showHowToPlay.set(false)} text class="red-text">Fechar</Button>
+            <Button on:click={() => showHowToPlay.set(false)} text class="red-text">Fechar</Button>
         </CardActions>
     </Card>
 </Dialog>
@@ -74,7 +79,9 @@
         CardActions,
         Row,
         Col,
+        Icon
     } from 'svelte-materialify';
+    import { mdiPlus } from '@mdi/js';
     import { showHowToPlay } from '../state/showHowToPlay';
 
     export let active = false;
