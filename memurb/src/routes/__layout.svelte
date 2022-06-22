@@ -38,6 +38,8 @@
         let user = localStorage.getItem('MEMURB_USER');
         let locationRedirect = 
             (window.location.pathname != '/login.html') && 
+            (window.location.pathname != '/thanks.html') && 
+            (window.location.pathname != '/index.html') && 
             (window.location.pathname != '/');
         if(!user && locationRedirect)
             window.location.assign('/');

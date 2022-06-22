@@ -3,10 +3,10 @@
     <FortalezaContent/>
 </CollapsableArticle>
 <ul class="grid">
-    <li class="place shadow"><a href="/cities/fortaleza/place1/clue">Lugar #1</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place2/clue">Lugar #2</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place3/clue">Lugar #3</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place4/clue">Lugar #4</a></li>
+    <li class="place shadow"><a href="/cities/fortaleza/place1/clue.html">Lugar #1</a></li>
+    <li class="place shadow"><a href="/cities/fortaleza/place2/clue.html">Lugar #2</a></li>
+    <li class="place shadow"><a href="/cities/fortaleza/place3/clue.html">Lugar #3</a></li>
+    <li class="place shadow"><a href="/cities/fortaleza/place4/clue.html">Lugar #4</a></li>
 </ul>
 
 
