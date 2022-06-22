@@ -36,7 +36,9 @@
 
     onMount(() => {
         let user = localStorage.getItem('MEMURB_USER');
-        if(!user)
+        let locationRedirect = 
+            (window.location.pathname != '/login.html')
+        if(!user && locationRedirect)
             window.location.assign('/');
     });
 </script>

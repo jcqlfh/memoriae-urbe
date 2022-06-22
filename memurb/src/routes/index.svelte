@@ -23,9 +23,10 @@
   import { showHeaderFooter } from '../state/showHeaderFooter';
   import { onMount } from 'svelte';
 
-  showHeaderFooter.update(value => false);
-
+  
   onMount(() => {
+        showHeaderFooter.update(value => false);
+        
         let user = localStorage.getItem('MEMURB_USER');
         if(user)
           window.location.assign('/home.html');
