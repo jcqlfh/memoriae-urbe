@@ -5,7 +5,7 @@
                 <Col>
                     <h4>Como Jogar</h4>
                 </Col>
-                <Col class="justify-end">
+                <Col class="display-flex justify-end">
                     <Button on:click={() => showHowToPlay.set(false)} icon><Icon path="{mdiClose}"/></Button>
                 </Col>
             </Row>
