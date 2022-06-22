@@ -22,6 +22,8 @@
     import HowToPlay from "../components/HowToPlay.svelte";
     import { showHowToPlay } from '../state/showHowToPlay';
     import { showHeaderFooter } from '../state/showHeaderFooter';
+    import { onMount } from 'svelte';
+
     let showValue:boolean;
     let showHowToValue:boolean;
 
@@ -32,7 +34,9 @@
 		showHowToValue = value;
 	});
 
-    let user = localStorage.getItem('MEMURB_USER');
-    if(!user)
-        window.location.assign('/');
+    onMount(() => {
+        let user = localStorage.getItem('MEMURB_USER');
+        if(!user)
+            window.location.assign('/');
+    });
 </script>
