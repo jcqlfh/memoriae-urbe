@@ -27,14 +27,14 @@
     let showValue:boolean;
     let showHowToValue:boolean;
 
-	showHeaderFooter.subscribe(value => {
-		showValue = value;
-	});
-	showHowToPlay.subscribe(value => {
-		showHowToValue = value;
-	});
-
     onMount(() => {
+        showHeaderFooter.subscribe(value => {
+		    showValue = value;
+        });
+        showHowToPlay.subscribe(value => {
+            showHowToValue = value;
+        });
+        
         let user = localStorage.getItem('MEMURB_USER');
         let locationRedirect = 
             (window.location.pathname != '/login.html') && 
