@@ -1,18 +1,20 @@
 <Dialog fullscreen bind:active>
     <Card>
         <CardTitle>
-        <h4>Como Jogar</h4>
+            <Row>
+                <Col>
+                    <h4>Como Jogar</h4>
+                </Col>
+                <Col class="justify-end">
+                    <Button on:click={() => showHowToPlay.set(false)} icon><Icon path="{mdiClose}"/></Button>
+                </Col>
+            </Row>
         </CardTitle>
         <CardText>
             <Row>
                 <Col>
                     <p>
                         Jogar este jogo é muito simples. Primeiro você deve escolher uma cidade
-                    </p>
-                </Col>
-                <Col>
-                    <p>
-                        <Button on:click={() => showHowToPlay.set(false)} icon><Icon path="{mdiPlus}"></Icon></Button>
                     </p>
                 </Col>
             </Row>
@@ -64,7 +66,7 @@
         
         </CardText>
         <CardActions class="justify-end">
-            <Button on:click={() => showHowToPlay.set(false)} text class="red-text">Fechar</Button>
+            <Button on:click={() => showHowToPlay.set(false)} text>Fechar<Icon path="{mdiClose}"/></Button>
         </CardActions>
     </Card>
 </Dialog>
@@ -81,7 +83,7 @@
         Col,
         Icon
     } from 'svelte-materialify';
-    import { mdiPlus } from '@mdi/js';
+    import { mdiClose } from '@mdi/js';
     import { showHowToPlay } from '../state/showHowToPlay';
 
     export let active = false;
