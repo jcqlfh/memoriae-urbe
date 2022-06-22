@@ -4,9 +4,9 @@
     </div>
     <div class="collapseButtonArea"><Button icon size="small" on:click={() => collapsed = !collapsed }>
         {#if (collapsed)}
-            <Icon path={mdiChevronDoubleDown}></Icon>
+            mais <Icon path={mdiChevronDoubleDown}></Icon>
         {:else}
-            <Icon path={mdiChevronDoubleUp}></Icon>
+            menos <Icon path={mdiChevronDoubleUp}></Icon>
         {/if}
 
     </Button></div>
