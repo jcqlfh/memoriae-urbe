@@ -12,6 +12,8 @@
 
 
 <script lang="ts">
+    import FortalezaContent from '../content/cities/fortaleza/FortalezaContent.md';
+    import UnknownContent from '../content/cities/UnknownContent.md';
     import CollapsableArticle from '../components/CollapsableArticle.svelte';
     import { onMount } from 'svelte';
     import { page } from '$app/stores';
@@ -21,13 +23,11 @@
         for:{
             key: 'fortaleza', 
             title: 'Fortaleza',
-            importPath: '../content/cities/fortaleza/FortalezaContent.md',
             places: [{},{},{},{}]
         },
         unk:{
             key: 'unknown', 
             title: 'Cidade Desconhecida',
-            importPath: '../content/cities/UnknownContent.md',
             places: []
         }
     };
@@ -36,7 +36,6 @@
     type City = {
             key: string;
             title: string;
-            importPath: string;
             places: []
         }
 
@@ -52,9 +51,15 @@
 
         map = citiesMap[city] as City;
 
-        /* @vite-ignore */
-        import(map.importPath)
-            .then(module => Content = module.default)
+        switch(city)
+        {
+            case 'for': 
+                Content = FortalezaContent;
+                break;
+            default:
+                Content = UnknownContent;
+                break;
+        }
     });
 
 </script>
