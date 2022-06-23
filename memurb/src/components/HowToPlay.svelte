@@ -49,7 +49,7 @@
             <Row>
                 <Col>
                     <ul class="grid">
-                        <li><img src="/images/qr-code.svg"></li>
+                        <li><img src="/images/qr-code.svg" alt="Exemplo QR Code"></li>
                     </ul>
                 </Col>
             </Row>
