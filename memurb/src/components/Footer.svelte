@@ -2,7 +2,7 @@
   {#if (showLink)}
     <Button depressed>
       <Icon path="{mdiChevronLeft}" />
-      <a href="{path}">{text}</a>
+      <a href="javascript:history.back()">{text}</a>
     </Button>
     {/if}
 </Footer>
@@ -12,6 +12,5 @@
     import { mdiChevronLeft } from '@mdi/js';
 
     export let showLink = false;
-    export let path = "../";
     export let text = "Voltar";
 </script>
