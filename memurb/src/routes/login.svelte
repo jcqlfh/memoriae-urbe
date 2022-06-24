@@ -1,6 +1,6 @@
 <svelte:head>
     <!-- Google Auth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
     <meta name="google-signin-client_id" content="">
 </svelte:head>
 
