@@ -19,15 +19,17 @@
     <meta name="google-signin-client_id" content="">
     <script language="JavaScript" type="text/javascript" src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
     <script>
-        function handleCredentialResponse(CredentialResponse) {
+        import firebase from './services/Firebase'
+
+        async function handleCredentialResponse(CredentialResponse) {
             try {
                 // Get credential and payload
                 var cred = CredentialResponse.credential;
                 var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));;
                 // Gets or creates the user
-                var user = getUser(payload)
+                var user = await firebase.getProfile(firebase.db, payload.email);
                 if (!user)
-                    user = createUser(payload);
+                    user = await firebase.createProfile(firebase.db, payload);
 
                 updateStorage(user);
                 // Redirects
@@ -35,20 +37,6 @@
             } catch {
                 console.log("erro ao logar");
             }
-        }
-
-        function getUser(payload) {
-            return {
-                name: payload.name,
-                email: payload.email
-            };
-        }
-
-        function createUser(payload) {
-            return {
-                name: payload.name,
-                email: payload.email
-            };
         }
 
         function updateStorage(user) {

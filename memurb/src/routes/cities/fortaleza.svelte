@@ -11,4 +11,5 @@
 <script lang="ts">
     import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
     import CollapsableArticle from '../../components/CollapsableArticle.svelte';
+    import { onMount } from 'svelte';
 </script>
