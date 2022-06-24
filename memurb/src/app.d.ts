@@ -9,6 +9,6 @@ declare namespace App {
 	// interface Stuff {}
 }
 
-declare interface Window {
-	onSubmit: (token) => void;
+declare module globalThis {
+	var handleCredentialResponse : (response) => void;
 }

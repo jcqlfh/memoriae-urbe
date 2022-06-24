@@ -24,7 +24,7 @@
 
     showHeaderFooter.update(value => false);
 
-    async function handleCredentialResponse(CredentialResponse: any) {
+   async function handleCredentialResponse(CredentialResponse: any) {
         try {
             var cred = CredentialResponse.credential;
             var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
@@ -44,6 +44,6 @@
     }
 
     onMount(() => {
-        window.onSubmit = handleCredentialResponse
+        globalThis.handleCredentialResponse = handleCredentialResponse;
     });
 </script>
