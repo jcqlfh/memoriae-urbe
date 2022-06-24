@@ -168,13 +168,16 @@
                     background-color: theme.$secondary;
                 }
                 a {
+                    font-size: .8rem;
+                    width: 80%;
+                    white-space: pre-wrap;
                     margin-top: 10px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
                 }
-                a::after {
+                a::before {
                     content: "";
                     margin-top: 5px;
                     display: flex;
