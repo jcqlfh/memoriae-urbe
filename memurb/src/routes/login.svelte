@@ -25,7 +25,7 @@
     showHeaderFooter.update(value => false);
 
     async function handleCredentialResponse(CredentialResponse: any) {
-        try {
+        //try {
             var cred = CredentialResponse.credential;
             var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
             var user = await firebase.getProfile(firebase.db, payload?.email);
@@ -34,9 +34,9 @@
             
             updateStorage(user); 
             window.location.assign('/home.html'); 
-        } catch { 
-            console.log("erro ao logar"); 
-        } 
+        //} catch { 
+        //    console.log("erro ao logar"); 
+        //} 
     } 
     
     function updateStorage(profile: any) { 
