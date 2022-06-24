@@ -7,7 +7,7 @@
             <slot></slot>
         </div>
         <div class="footer">
-            <Footer showLink={showValue}/>
+            <Footer showLink={showValue} path={path} text={text}/>
         </div>
     </div>
 </MaterialApp>
@@ -24,11 +24,15 @@
     import { onMount } from 'svelte';
 
     let showValue:boolean;
+    let path:string;
+    let text:string;
     let showHowToValue:boolean;
 
     onMount(() => {
         showHeaderFooter.subscribe(value => {
-		    showValue = value;
+		    showValue = value.show;
+            path = value.path;
+            text = value.text;
         });
         showHowToPlay.subscribe(value => {
             showHowToValue = value;

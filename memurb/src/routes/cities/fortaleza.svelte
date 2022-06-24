@@ -12,7 +12,7 @@
     import CollapsableArticle from '../../components/CollapsableArticle.svelte';
     import firebase from '../../services/Firebase';
     import { onMount } from 'svelte';
-
+    
     let profile : any = {places:[]};
     
     onMount(() => {

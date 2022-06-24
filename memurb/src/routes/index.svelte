@@ -25,7 +25,7 @@
 
   
   onMount(() => {
-        showHeaderFooter.update(value => false);
+        showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
         
         let user = localStorage.getItem('MEMURB_PROFILE');
         if(user)

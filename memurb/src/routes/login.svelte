@@ -24,7 +24,7 @@
     import firebase from '../services/Firebase'; 
     import { onMount } from 'svelte';
 
-    showHeaderFooter.update(value => false);
+    showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
     let load = false;
 
     onMount(() => {

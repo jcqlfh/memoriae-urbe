@@ -7,4 +7,6 @@
 <script lang="ts">
     import CollapsableArticle from '../../../../components/CollapsableArticle.svelte';
     import Place from '../../../../content/cities/fortaleza/place2/Place.md';
+    import { showHeaderFooter } from '../../../../state/showHeaderFooter';
+    showHeaderFooter.update(value => ({ show:true, path: "/cities/fortaleza.html", text: "Fortaleza"}));
 </script>

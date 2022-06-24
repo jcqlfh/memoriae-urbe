@@ -5,5 +5,6 @@
 
 <script lang="ts">
     import { showHeaderFooter } from '../state/showHeaderFooter';
-    showHeaderFooter.update(value => false);
+    showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
+
 </script>
