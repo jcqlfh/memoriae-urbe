@@ -1,7 +1,9 @@
 <svelte:head>
-    <!-- Google Auth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <meta name="google-signin-client_id" content="">
+    {#if load}
+        <!-- Google Auth -->
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <meta name="google-signin-client_id" content="">
+    {/if}
 </svelte:head>
 
 <h2 class="font-julius">Login</h2>
@@ -23,6 +25,7 @@
     import { onMount } from 'svelte';
 
     showHeaderFooter.update(value => false);
+    let load = false;
 
     onMount(() => {
         globalThis.handleCredentialResponse = async function(CredentialResponse: any) {
@@ -39,5 +42,7 @@
                 console.log("erro ao logar"); 
             } 
         } 
+
+        load = true;
     });
 </script>
