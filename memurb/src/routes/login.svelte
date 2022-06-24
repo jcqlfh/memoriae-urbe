@@ -24,26 +24,20 @@
 
     showHeaderFooter.update(value => false);
 
-   async function handleCredentialResponse(CredentialResponse: any) {
-        try {
-            var cred = CredentialResponse.credential;
-            var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
-            var user = await firebase.getProfile(firebase.db, payload?.email);
-            if (!user)
-                user = await firebase.setProfile(firebase.db, payload);
-            
-            updateStorage(user); 
-            window.location.assign('/home.html'); 
-        } catch { 
-            console.log("erro ao logar"); 
-        } 
-    } 
-    
-    function updateStorage(profile: any) { 
-        localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile)); 
-    }
-
     onMount(() => {
-        globalThis.handleCredentialResponse = handleCredentialResponse;
+        globalThis.handleCredentialResponse = async function(CredentialResponse: any) {
+            try {
+                var cred = CredentialResponse.credential;
+                var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
+                var user = await firebase.getProfile(firebase.db, payload?.email);
+                if (!user)
+                    user = await firebase.setProfile(firebase.db, payload);
+                
+                    localStorage.setItem("MEMURB_PROFILE", JSON.stringify(user));  
+                window.location.assign('/home.html'); 
+            } catch { 
+                console.log("erro ao logar"); 
+            } 
+        } 
     });
 </script>
