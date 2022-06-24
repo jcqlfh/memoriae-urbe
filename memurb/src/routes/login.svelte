@@ -1,6 +1,6 @@
 <svelte:head>
     <!-- Google Auth -->
-    <script src="https://accounts.google.com/gsi/client"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <meta name="google-signin-client_id" content="">
 </svelte:head>
 
@@ -15,7 +15,7 @@
     data-callback="onSubmit">
 </div>
 <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
-<script lang="javascript">
+<script lang="ts">
     import NewUserContent from '../content/NewUserContent.md';
     import { showHeaderFooter } from '../state/showHeaderFooter';
     import  {KJUR, b64utoutf8} from "jsrsasign";
@@ -24,22 +24,22 @@
 
     showHeaderFooter.update(value => false);
 
-    async function handleCredentialResponse(CredentialResponse) {
-        //try {
+    async function handleCredentialResponse(CredentialResponse: any) {
+        try {
             var cred = CredentialResponse.credential;
-            var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
-            var user = await firebase.getProfile(firebase.db, payload.email);
+            var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
+            var user = await firebase.getProfile(firebase.db, payload?.email);
             if (!user)
                 user = await firebase.setProfile(firebase.db, payload);
             
             updateStorage(user); 
             window.location.assign('/home.html'); 
-        //} catch { 
-        //    console.log("erro ao logar"); 
-        //} 
+        } catch { 
+            console.log("erro ao logar"); 
+        } 
     } 
     
-    function updateStorage(profile) { 
+    function updateStorage(profile: any) { 
         localStorage.setItem("MEMURB_USER", profile); 
     }
 
