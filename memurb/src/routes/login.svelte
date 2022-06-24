@@ -44,6 +44,6 @@
     }
 
     onMount(() => {
-        globalThis.handleCredentialResponse = handleCredentialResponse;
+        global.handleCredentialResponse = handleCredentialResponse;
     });
 </script>

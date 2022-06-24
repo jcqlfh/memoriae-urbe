@@ -9,6 +9,7 @@ declare namespace App {
 	// interface Stuff {}
 }
 
-declare module globalThis {
-	var handleCredentialResponse : (response) => void;
+export interface global {}
+declare global {
+	var  handleCredentialResponse: (response) => void;
 }
