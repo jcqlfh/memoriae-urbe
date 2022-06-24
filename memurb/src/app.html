@@ -18,30 +18,10 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <meta name="google-signin-client_id" content="">
     <script language="JavaScript" type="text/javascript" src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js"></script>
-    <script>
-        import firebase from './services/Firebase'
-
-        async function handleCredentialResponse(CredentialResponse) {
-            try {
-                // Get credential and payload
-                var cred = CredentialResponse.credential;
-                var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));;
-                // Gets or creates the user
-                var user = await firebase.getProfile(firebase.db, payload.email);
-                if (!user)
-                    user = await firebase.createProfile(firebase.db, payload);
-
-                updateStorage(user);
-                // Redirects
-                window.location.assign('/home.html');
-            } catch {
-                console.log("erro ao logar");
-            }
-        }
-
-        function updateStorage(user) {
-            localStorage.setItem("MEMURB_USER", user);
-        }
+    <script type="module">
+        import firebase from './services/Firebase'; async function handleCredentialResponse(CredentialResponse) { try { var cred = CredentialResponse.credential; var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));; var user = await
+        firebase.getProfile(firebase.db, payload.email); if (!user) user = await firebase.createProfile(firebase.db, payload); updateStorage(user); window.location.assign('/home.html'); } catch { console.log("erro ao logar"); } } function updateStorage(user)
+        { localStorage.setItem("MEMURB_USER", user); }
     </script>
 </head>
 
