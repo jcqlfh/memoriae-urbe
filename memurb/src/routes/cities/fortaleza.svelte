@@ -3,13 +3,33 @@
     <FortalezaContent/>
 </CollapsableArticle>
 <ul class="grid">
-    <li class="place shadow"><a href="/cities/fortaleza/place1/clue.html">Lugar #1</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place2/clue.html">Lugar #2</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place3/clue.html">Lugar #3</a></li>
-    <li class="place shadow"><a href="/cities/fortaleza/place4/clue.html">Lugar #4</a></li>
+    {#each profile.places as place }
+        <li class="place shadow {place.found ? 'found' : ''}"><a href="{place.link}">{place.name}</a></li>
+    {/each}
 </ul>
 <script lang="ts">
     import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
     import CollapsableArticle from '../../components/CollapsableArticle.svelte';
+    import firebase from '../../services/Firebase';
     import { onMount } from 'svelte';
+
+    let profile : any = {places:[]};
+    onMount(() => {
+        var profile = JSON.parse(localStorage.getItem("MEMURB_USER") ?? "{}");
+
+        var places = profile.places;
+
+        if(!places)
+        {
+            profile = {...profile, places: [
+                { name: "Lugar #1", link: "/cities/fortaleza/place1/clue.html", found: false},
+                { name: "Lugar #2", link: "/cities/fortaleza/place2/clue.html", found: false},
+                { name: "Lugar #3", link: "/cities/fortaleza/place3/clue.html", found: false},
+                { name: "Lugar #4", link: "/cities/fortaleza/place4/clue.html", found: false}
+            ]};
+
+            firebase.setProfile(firebase.db, profile);
+            localStorage.setItem("MEMURB_USER", profile);
+        }
+    });
 </script>
