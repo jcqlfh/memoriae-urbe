@@ -14,8 +14,9 @@
     import { onMount } from 'svelte';
 
     let profile : any = {places:[]};
+    
     onMount(() => {
-        var profile = JSON.parse(localStorage.getItem("MEMURB_USER") ?? "{}");
+        profile = JSON.parse(localStorage.getItem("MEMURB_USER") ?? "{}");
 
         var places = profile.places;
 
