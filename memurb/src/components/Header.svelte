@@ -15,7 +15,7 @@
       </div>
       <ListItem on:click={() => window.location.assign("/home.html")}>Home</ListItem>
       <ListItem on:click={() => showHowToPlay.set(true)}>Como jogar</ListItem>
-      <ListItem>Sair</ListItem>
+      <ListItem on:click={() => logout()}>Sair</ListItem>
     </Menu>
   {/if}
   
@@ -26,4 +26,10 @@
     import { mdiDotsVertical } from '@mdi/js';
     import { showHowToPlay } from '../state/showHowToPlay';
     export let showMenu = false;
+
+    function logout()
+    {
+      localStorage.clear();
+      window.location.assign("/");
+    }
 </script>
