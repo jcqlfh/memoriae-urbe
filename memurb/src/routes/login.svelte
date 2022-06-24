@@ -6,7 +6,7 @@
 
     <div id="g_id_onload"
         data-client_id="230694410812-o7kia0262bsslhb2vh418s4jhbtqp02l.apps.googleusercontent.com"
-        data-callback="{(reponse) => handleCredentialResponse(reponse)}">
+        data-callback="handleCredentialResponse">
     </div>
     <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
 <script lang="ts">
@@ -14,6 +14,7 @@
     import { showHeaderFooter } from '../state/showHeaderFooter';
     import  {KJUR, b64utoutf8} from "jsrsasign";
     import firebase from '../services/Firebase'; 
+    import { onMount } from 'svelte';
 
     showHeaderFooter.update(value => false);
 
@@ -35,4 +36,8 @@
     function updateStorage(profile: any) { 
         localStorage.setItem("MEMURB_USER", profile); 
     }
+
+    onMount(() => {
+        window.handleCredentialResponse = handleCredentialResponse
+    });
 </script>
