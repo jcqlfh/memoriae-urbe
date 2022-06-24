@@ -144,9 +144,9 @@
                     flex-direction: column;
                     align-items: center;
                 }
-                a::after {
+                a::before {
                     content: "";
-                    margin-top: 5px;
+                    margin: 5px;
                     display: flex;
                     height: 6rem;
                     width: 6rem;
@@ -179,7 +179,7 @@
                 }
                 a::before {
                     content: "";
-                    margin-top: 5px;
+                    margin: 5px;
                     display: flex;
                     height: 6rem;
                     width: 6rem;
