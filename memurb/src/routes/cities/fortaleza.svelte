@@ -29,7 +29,7 @@
             ]};
 
             firebase.setProfile(firebase.db, profile);
-            localStorage.setItem("MEMURB_USER", profile);
+            localStorage.setItem("MEMURB_USER", JSON.stringify(profile));
         }
     });
 </script>
