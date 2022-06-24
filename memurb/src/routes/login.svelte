@@ -15,7 +15,7 @@
     data-callback="onSubmit">
 </div>
 <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
-<script lang="ts">
+<script lang="javascript">
     import NewUserContent from '../content/NewUserContent.md';
     import { showHeaderFooter } from '../state/showHeaderFooter';
     import  {KJUR, b64utoutf8} from "jsrsasign";
@@ -24,11 +24,11 @@
 
     showHeaderFooter.update(value => false);
 
-    async function handleCredentialResponse(CredentialResponse: any) {
+    async function handleCredentialResponse(CredentialResponse) {
         //try {
             var cred = CredentialResponse.credential;
-            var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
-            var user = await firebase.getProfile(firebase.db, payload?.email);
+            var payload = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
+            var user = await firebase.getProfile(firebase.db, payload.email);
             if (!user)
                 user = await firebase.setProfile(firebase.db, payload);
             
@@ -39,7 +39,7 @@
         //} 
     } 
     
-    function updateStorage(profile: any) { 
+    function updateStorage(profile) { 
         localStorage.setItem("MEMURB_USER", profile); 
     }
 
