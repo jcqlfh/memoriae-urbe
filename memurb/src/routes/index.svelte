@@ -27,7 +27,7 @@
   onMount(() => {
         showHeaderFooter.update(value => false);
         
-        let user = localStorage.getItem('MEMURB_USER');
+        let user = localStorage.getItem('MEMURB_PROFILE');
         if(user)
           window.location.assign('/home.html');
     });

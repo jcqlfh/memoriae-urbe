@@ -34,7 +34,7 @@
             showHowToValue = value;
         });
         
-        let user = localStorage.getItem('MEMURB_USER');
+        let user = localStorage.getItem('MEMURB_PROFILE');
         let locationRedirect = 
             (window.location.pathname != '/login.html') && 
             (window.location.pathname != '/thanks.html') && 

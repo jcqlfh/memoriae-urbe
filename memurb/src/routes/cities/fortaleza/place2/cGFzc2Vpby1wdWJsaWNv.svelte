@@ -11,7 +11,7 @@
     import firebase from '../../../../services/Firebase'
 
     onMount(() => {
-        let profile = JSON.parse(localStorage.getItem("MEMURB_USER") ?? "{}");
+        let profile = JSON.parse(localStorage.getItem("MEMURB_PROFILE") ?? "{}");
 
         var places = profile.places;
 
@@ -32,6 +32,6 @@
         }
 
         firebase.setProfile(firebase.db, profile);
-        localStorage.setItem("MEMURB_USER", JSON.stringify(profile));
+        localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile));
     });
 </script>

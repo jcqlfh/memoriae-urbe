@@ -16,7 +16,7 @@
     let profile : any = {places:[]};
     
     onMount(() => {
-        profile = JSON.parse(localStorage.getItem("MEMURB_USER") ?? "{}");
+        profile = JSON.parse(localStorage.getItem("MEMURB_PROFILE") ?? "{}");
 
         var places = profile.places;
 
@@ -30,7 +30,7 @@
             ]};
 
             firebase.setProfile(firebase.db, profile);
-            localStorage.setItem("MEMURB_USER", JSON.stringify(profile));
+            localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile));
         }
     });
 </script>

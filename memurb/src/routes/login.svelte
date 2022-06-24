@@ -40,7 +40,7 @@
     } 
     
     function updateStorage(profile: any) { 
-        localStorage.setItem("MEMURB_USER", JSON.stringify(profile)); 
+        localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile)); 
     }
 
     onMount(() => {
