@@ -138,6 +138,9 @@
                 width: 10rem;
                 background-color: theme.$primary;
                 border-radius: 50px;
+                &.found {
+                    background-color: theme.$secondary;
+                }
                 a {
                     margin-top: 10px;
                     display: flex;
