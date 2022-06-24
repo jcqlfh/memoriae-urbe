@@ -2,6 +2,12 @@
 <CollapsableArticle>
     <FortalezaContent/>
 </CollapsableArticle>
+
+{#if foundAll}
+    <h4 class="font-julius">PARABÉNS</h4>
+    <h6>Você encontrou todos os lugares</h6>
+{/if}
+
 <ul class="grid">
     {#each profile.places as place }
         <li class="place shadow {place.found ? 'found' : ''}"><a href="{place.link}">{place.name}</a></li>
@@ -14,7 +20,8 @@
     import { onMount } from 'svelte';
     
     let profile : any = {places:[]};
-    
+    let foundAll = false;
+
     onMount(() => {
         profile = JSON.parse(localStorage.getItem("MEMURB_PROFILE") ?? "{}");
 
@@ -32,5 +39,9 @@
             firebase.setProfile(firebase.db, profile);
             localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile));
         }
+
+        foundAll = !places.find(p => !p.found);
+
+
     });
 </script>
