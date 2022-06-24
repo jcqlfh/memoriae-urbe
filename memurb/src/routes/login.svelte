@@ -12,5 +12,27 @@
 <script lang="ts">
     import NewUserContent from '../content/NewUserContent.md';
     import { showHeaderFooter } from '../state/showHeaderFooter';
+    import  {KJUR, b64utoutf8} from "jsrsasign";
+    import firebase from '../services/Firebase'; 
+
     showHeaderFooter.update(value => false);
+
+    async function handleCredentialResponse(CredentialResponse: any) {
+        try {
+            var cred = CredentialResponse.credential;
+            var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split(".")[1]));
+            var user = await firebase.getProfile(firebase.db, payload?.email);
+            if (!user)
+                user = await firebase.setProfile(firebase.db, payload);
+            
+            updateStorage(user); 
+            window.location.assign('/home.html'); 
+        } catch { 
+            console.log("erro ao logar"); 
+        } 
+    } 
+    
+    function updateStorage(profile: any) { 
+        localStorage.setItem("MEMURB_USER", profile); 
+    }
 </script>
