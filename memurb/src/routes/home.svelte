@@ -5,7 +5,6 @@
 
 <script lang="ts">
     import { showFooter } from '../state/showFooter';
-    import { showHeader } from '../state/showHeader';
     import { onMount } from 'svelte';
     showFooter.update(value => ({ show: false, path: "/home.html", text: "Home"}));
 
