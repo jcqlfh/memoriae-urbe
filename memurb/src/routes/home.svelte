@@ -16,7 +16,7 @@
         var places = profile.places;
 
         if(places)
-        foundAll = !places.find(p => !p.found);
+        foundAll = !places.find((p: any) => !p.found);
 
 
     });

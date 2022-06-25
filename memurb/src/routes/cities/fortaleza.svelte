@@ -40,7 +40,7 @@
             localStorage.setItem("MEMURB_PROFILE", JSON.stringify(profile));
         }
 
-        foundAll = !places.find(p => !p.found);
+        foundAll = !places.find((p: any) => !p.found);
 
 
     });
