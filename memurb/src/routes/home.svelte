@@ -8,7 +8,6 @@
     import { showHeader } from '../state/showHeader';
     import { onMount } from 'svelte';
     showFooter.update(value => ({ show: false, path: "/home.html", text: "Home"}));
-    showHeader.update(value => false);
 
     let foundAll = false;
 
