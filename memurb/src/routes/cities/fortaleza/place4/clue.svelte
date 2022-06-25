@@ -6,6 +6,6 @@
 
 <script lang="ts">
     import Clue from '../../../../content/cities/fortaleza/place4/Clue.md';
-    import { showHeaderFooter } from '../../../../state/showHeaderFooter';
-    showHeaderFooter.update(value => ({ show:true, path: "/cities/fortaleza.html", text: "Fortaleza"}));
+    import { showFooter } from '../../../../state/showFooter';
+    showFooter.update(value => ({ show:true, path: "/cities/fortaleza.html", text: "Fortaleza"}));
 </script>

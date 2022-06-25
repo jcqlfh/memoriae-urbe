@@ -1,13 +1,13 @@
 <MaterialApp>
     <div class="container">
         <div class="header">
-            <Header showMenu={showValue}/>
+            <Header showMenu={showHeaderValue}/>
         </div>
         <div class="main">
             <slot></slot>
         </div>
         <div class="footer">
-            <Footer showLink={showValue} path={path} text={text}/>
+            <Footer showLink={showFooterValue} path={path} text={text}/>
         </div>
     </div>
 </MaterialApp>
@@ -20,20 +20,27 @@
     import Header from "../components/Header.svelte";
     import HowToPlay from "../components/HowToPlay.svelte";
     import { showHowToPlay } from '../state/showHowToPlay';
-    import { showHeaderFooter } from '../state/showHeaderFooter';
+    import { showFooter } from '../state/showFooter';
+    import { showHeader } from '../state/showHeader';
     import { onMount } from 'svelte';
 
-    let showValue:boolean;
+    let showHeaderValue:boolean;
+    let showFooterValue:boolean;
     let path:string;
     let text:string;
     let showHowToValue:boolean;
 
     onMount(() => {
-        showHeaderFooter.subscribe(value => {
-		    showValue = value.show;
+        showHeader.subscribe(value => {
+            showHeaderValue = value;
+        });
+
+        showFooter.subscribe(value => {
+		    showFooterValue = value.show;
             path = value.path;
             text = value.text;
         });
+
         showHowToPlay.subscribe(value => {
             showHowToValue = value;
         });

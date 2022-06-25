@@ -19,12 +19,15 @@
 <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large"></div>
 <script lang="ts">
     import NewUserContent from '../content/NewUserContent.md';
-    import { showHeaderFooter } from '../state/showHeaderFooter';
+    import { showFooter } from '../state/showFooter';
+    import { showHeader } from '../state/showHeader';
     import  {KJUR, b64utoutf8} from "jsrsasign";
     import firebase from '../services/Firebase'; 
     import { onMount } from 'svelte';
 
-    showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
+    showFooter.update(value => ({ show: false, path: "/home.html", text: "Home"}));
+    showHeader.update(value => false);
+    
     let load = false;
 
     onMount(() => {

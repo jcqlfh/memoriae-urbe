@@ -20,12 +20,14 @@
 <script lang="ts">
   import WelcomeContent from '../content/WelcomeContent.md';
   import { Button } from 'svelte-materialify';
-  import { showHeaderFooter } from '../state/showHeaderFooter';
+  import { showFooter } from '../state/showFooter';
+  import { showHeader } from '../state/showHeader';
   import { onMount } from 'svelte';
 
   
   onMount(() => {
-        showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
+        showFooter.update(value => ({ show: false, path: "/home.html", text: "Home"}));
+        showHeader.update(value => false);
         
         let user = localStorage.getItem('MEMURB_PROFILE');
         if(user)

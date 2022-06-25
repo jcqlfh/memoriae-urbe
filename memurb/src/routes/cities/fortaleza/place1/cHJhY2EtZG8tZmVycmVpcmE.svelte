@@ -9,8 +9,8 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import firebase from '../../../../services/Firebase'
-    import { showHeaderFooter } from '../../../../state/showHeaderFooter';
-    showHeaderFooter.update(value => ({ show:true, path: "/cities/fortaleza.html", text: "Fortaleza"}));
+    import { showFooter } from '../../../../state/showFooter';
+    showFooter.update(value => ({ show:true, path: "/cities/fortaleza.html", text: "Fortaleza"}));
 
     onMount(() => {
         let profile = JSON.parse(localStorage.getItem("MEMURB_PROFILE") ?? "{}");

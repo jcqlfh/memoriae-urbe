@@ -4,9 +4,11 @@
 </ul>
 
 <script lang="ts">
-    import { showHeaderFooter } from '../state/showHeaderFooter';
+    import { showFooter } from '../state/showFooter';
+    import { showHeader } from '../state/showHeader';
     import { onMount } from 'svelte';
-    showHeaderFooter.update(value => ({ show:false, path: "/home.html", text: "Home"}));
+    showFooter.update(value => ({ show: false, path: "/home.html", text: "Home"}));
+    showHeader.update(value => false);
 
     let foundAll = false;
 
