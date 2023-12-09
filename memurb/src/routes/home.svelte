@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { showFooter } from '../state/showFooter';
 	import { onMount } from 'svelte';
-	showFooter.update((value) => ({ show: false, path: '/home', text: 'Home' }));
+	showFooter.update((value) => ({ show: false, path: '/home.html', text: 'Home' }));
 
 	let foundAll = false;
 
@@ -16,5 +16,7 @@
 
 <h2 class="font-julius">Cidades</h2>
 <ul>
-	<li class="city shadow {foundAll ? 'found' : ''}"><a href="/cities/fortaleza">Fortaleza</a></li>
+	<li class="city shadow {foundAll ? 'found' : ''}">
+		<a href="/cities/fortaleza.html">Fortaleza</a>
+	</li>
 </ul>

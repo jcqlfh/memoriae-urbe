@@ -25,7 +25,7 @@
 					<Icon path={mdiDotsVertical} />
 				</Button>
 			</div>
-			<ListItem on:click={() => window.location.assign('/home')}>Home</ListItem>
+			<ListItem on:click={() => window.location.assign('/home.html')}>Home</ListItem>
 			<ListItem on:click={() => showHowToPlay.set(true)}>Como jogar</ListItem>
 			<ListItem on:click={() => logout()}>Sair</ListItem>
 		</Menu>

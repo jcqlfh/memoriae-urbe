@@ -6,7 +6,7 @@
 	import firebase from '../services/Firebase';
 	import { onMount } from 'svelte';
 
-	showFooter.update((value) => ({ show: false, path: '/home', text: 'Home' }));
+	showFooter.update((value) => ({ show: false, path: '/home.html', text: 'Home' }));
 	showHeader.update((value) => false);
 
 	let load = false;
@@ -20,7 +20,7 @@
 				if (!user) user = await firebase.setProfile(firebase.db, payload);
 
 				localStorage.setItem('MEMURB_PROFILE', JSON.stringify(user));
-				window.location.assign('/home');
+				window.location.assign('/home.html');
 			} catch {
 				console.log('erro ao logar');
 			}

@@ -16,10 +16,10 @@
 			profile = {
 				...profile,
 				places: [
-					{ name: 'Lugar #1', link: '/cities/fortaleza/place1/clue', found: false },
-					{ name: 'Lugar #2', link: '/cities/fortaleza/place2/clue', found: false },
-					{ name: 'Lugar #3', link: '/cities/fortaleza/place3/clue', found: false },
-					{ name: 'Lugar #4', link: '/cities/fortaleza/place4/clue', found: false }
+					{ name: 'Lugar #1', link: '/cities/fortaleza/place1/clue.html', found: false },
+					{ name: 'Lugar #2', link: '/cities/fortaleza/place2/clue.html', found: false },
+					{ name: 'Lugar #3', link: '/cities/fortaleza/place3/clue.html', found: false },
+					{ name: 'Lugar #4', link: '/cities/fortaleza/place4/clue.html', found: false }
 				]
 			};
 

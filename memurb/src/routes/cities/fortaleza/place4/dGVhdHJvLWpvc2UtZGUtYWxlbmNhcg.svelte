@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import firebase from '../../../../services/Firebase';
 	import { showFooter } from '../../../../state/showFooter';
-	showFooter.update((value) => ({ show: true, path: '/cities/fortaleza', text: 'Fortaleza' }));
+	showFooter.update((value) => ({ show: true, path: '/cities/fortaleza.html', text: 'Fortaleza' }));
 	onMount(() => {
 		let profile = JSON.parse(localStorage.getItem('MEMURB_PROFILE') ?? '{}');
 
@@ -12,17 +12,17 @@
 			profile = {
 				...profile,
 				places: [
-					{ name: 'Lugar #1', link: '/cities/fortaleza/place1/clue', found: false },
-					{ name: 'Lugar #2', link: '/cities/fortaleza/place2/clue', found: false },
-					{ name: 'Lugar #3', link: '/cities/fortaleza/place3/clue', found: false },
-					{ name: 'Lugar #4', link: '/cities/fortaleza/place4/clue', found: false }
+					{ name: 'Lugar #1', link: '/cities/fortaleza/place1/clue.html', found: false },
+					{ name: 'Lugar #2', link: '/cities/fortaleza/place2/clue.html', found: false },
+					{ name: 'Lugar #3', link: '/cities/fortaleza/place3/clue.html', found: false },
+					{ name: 'Lugar #4', link: '/cities/fortaleza/place4/clue.html', found: false }
 				]
 			};
 		}
 
 		profile.places[3] = {
 			name: 'Teatro José de Alencar',
-			link: '/cities/fortaleza/place4/teatro-jose-de-alencar',
+			link: '/cities/fortaleza/place4/teatro-jose-de-alencar.html',
 			found: true
 		};
 
@@ -35,7 +35,7 @@
 
 <ul class="grid">
 	<li>
-		<a href="teatro-jose-de-alencar"
+		<a href="teatro-jose-de-alencar.html"
 			><img src="/images/pictures/fortaleza/place4/1.webp" alt="Teatro José de Alencar" /></a
 		>
 	</li>

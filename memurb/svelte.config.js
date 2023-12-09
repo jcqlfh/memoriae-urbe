@@ -17,7 +17,7 @@ const config = {
 		prerender: {
 			default: true
 		},
-		adapter: adapter()
+		adapter: adapter({ trailingSlash: 'always' })
 	}
 };
 export default config;

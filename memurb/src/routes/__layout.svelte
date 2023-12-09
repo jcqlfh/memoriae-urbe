@@ -31,12 +31,12 @@
 		});
 
 		let user = localStorage.getItem('MEMURB_PROFILE');
-		let locationRedirect = false;
-		//     (window.location.pathname != '/login') &&
-		//     (window.location.pathname != '/thanks') &&
-		//     (window.location.pathname != '/nggyu') &&
-		//     (window.location.pathname != '/index') &&
-		//     (window.location.pathname != '/');
+		let locationRedirect =
+			window.location.pathname != '/login.html' &&
+			window.location.pathname != '/thanks.html' &&
+			window.location.pathname != '/nggyu.html' &&
+			window.location.pathname != '/index.html' &&
+			window.location.pathname != '/';
 		if (!user && locationRedirect) window.location.assign('/');
 	});
 </script>
