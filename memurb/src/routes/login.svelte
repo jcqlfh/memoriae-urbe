@@ -34,10 +34,6 @@
 	{#if load}
 		<!-- Google Auth -->
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<meta
-			name="google-signin-client_id"
-			content="681803862852-vkgkgfn4bjcm9s8ou89lvtpbiq7bm0nc.apps.googleusercontent.com"
-		/>
 	{/if}
 </svelte:head>
 
@@ -47,4 +43,9 @@
 	<NewUserContent />
 </article>
 
-<div class="g-signin2" data-onsuccess="onSignIn" />
+<div
+	id="g_id_onload"
+	data-client_id="681803862852-vkgkgfn4bjcm9s8ou89lvtpbiq7bm0nc.apps.googleusercontent.com"
+	data-callback="handleCredentialResponse"
+/>
+<div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large" />
