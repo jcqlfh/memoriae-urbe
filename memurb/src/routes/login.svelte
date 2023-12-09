@@ -33,8 +33,11 @@
 <svelte:head>
 	{#if load}
 		<!-- Google Auth -->
-		<script src="https://accounts.google.com/gsi/client" async defer></script>
-		<meta name="google-signin-client_id" content="" />
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta
+			name="google-signin-client_id"
+			content="681803862852-vkgkgfn4bjcm9s8ou89lvtpbiq7bm0nc.apps.googleusercontent.com"
+		/>
 	{/if}
 </svelte:head>
 
@@ -44,9 +47,4 @@
 	<NewUserContent />
 </article>
 
-<div
-	id="g_id_onload"
-	data-client_id="230694410812-o7kia0262bsslhb2vh418s4jhbtqp02l.apps.googleusercontent.com"
-	data-callback="handleCredentialResponse"
-/>
-<div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large" />
+<div class="g-signin2" data-onsuccess="onSignIn" />
