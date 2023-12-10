@@ -21,8 +21,8 @@
 
 				localStorage.setItem('MEMURB_PROFILE', JSON.stringify(user));
 				window.location.assign('/home.html');
-			} catch {
-				console.log('erro ao logar');
+			} catch (exception) {
+				console.log('erro ao :' + exception);
 			}
 		};
 
