@@ -8,6 +8,8 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
       - name: build-action
+        env:
+          VITE_FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
           cd memurb
           npm install
