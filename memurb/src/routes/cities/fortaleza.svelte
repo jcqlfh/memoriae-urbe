@@ -2,6 +2,7 @@
 	import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
 	import CollapsableArticle from '../../components/CollapsableArticle.svelte';
 	import { onMount } from 'svelte';
+	import { get } from 'svelte/store';
 	import RedirectHandler from '../../../src/services/RedirectHandler';
 	import { showFooter } from '../../../src/state/showFooter';
 	import { profile } from 'src/state/profile';
@@ -21,11 +22,8 @@
 			window.location.assign('/login.html');
 			return;
 		}
-
-		profile.subscribe((p) => {
-			profileValue = p;
-			foundAll = !profileValue.places.find((p: any) => !p.found);
-		});
+		profileValue = get(profile);
+		foundAll = !profileValue.places.find((p: any) => !p.found);
 	});
 </script>
 
