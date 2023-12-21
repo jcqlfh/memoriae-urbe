@@ -18,6 +18,7 @@
 			return;
 		}
 		ProfileUpdater.updatePlace({
+			code: 'cGFzc2Vpby1wdWJsaWNv',
 			name: 'Passeio Público',
 			link: '/cities/fortaleza/place2/passeio-publico.html',
 			found: true

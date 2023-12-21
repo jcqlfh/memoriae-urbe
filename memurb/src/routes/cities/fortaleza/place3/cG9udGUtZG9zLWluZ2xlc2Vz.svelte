@@ -18,6 +18,7 @@
 			return;
 		}
 		ProfileUpdater.updatePlace({
+			code: 'cG9udGUtZG9zLWluZ2xlc2Vz',
 			name: 'Ponte dos Ingleses',
 			link: '/cities/fortaleza/place3/ponte-dos-ingleses.html',
 			found: true

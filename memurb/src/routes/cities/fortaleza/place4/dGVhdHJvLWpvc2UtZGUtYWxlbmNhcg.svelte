@@ -18,6 +18,7 @@
 			return;
 		}
 		ProfileUpdater.updatePlace({
+			code: 'dGVhdHJvLWpvc2UtZGUtYWxlbmNhcg',
 			name: 'Teatro José de Alencar',
 			link: '/cities/fortaleza/place4/teatro-jose-de-alencar.html',
 			found: true

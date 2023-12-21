@@ -18,6 +18,7 @@
 			return;
 		}
 		ProfileUpdater.updatePlace({
+			code: 'cHJhY2EtZG8tZmVycmVpcmE',
 			name: 'Praça do Ferreira',
 			link: '/cities/fortaleza/place1/praca-do-ferreira.html',
 			found: true
