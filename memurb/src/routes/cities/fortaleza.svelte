@@ -1,33 +1,31 @@
 <script lang="ts">
 	import FortalezaContent from '../../content/cities/fortaleza/FortalezaContent.md';
 	import CollapsableArticle from '../../components/CollapsableArticle.svelte';
-	import firebase from '../../services/Firebase';
 	import { onMount } from 'svelte';
+	import RedirectHandler from '../../../src/services/RedirectHandler';
+	import { showFooter } from '../../../src/state/showFooter';
+	import { profile } from 'src/state/profile';
+	import type { Profile } from 'src/types/Profile';
 
-	let profile: any = { places: [] };
-	let foundAll = false;
+	let profileValue: Profile = {} as Profile;
+	let foundAll: boolean;
 
 	onMount(() => {
-		profile = JSON.parse(localStorage.getItem('MEMURB_PROFILE') ?? '{}');
+		showFooter.update((value) => ({
+			show: true,
+			path: '/home.html',
+			text: 'Home'
+		}));
 
-		var places = profile.places;
-
-		if (!places) {
-			profile = {
-				...profile,
-				places: [
-					{ name: 'Lugar #1', link: '/cities/fortaleza/place1/clue.html', found: false },
-					{ name: 'Lugar #2', link: '/cities/fortaleza/place2/clue.html', found: false },
-					{ name: 'Lugar #3', link: '/cities/fortaleza/place3/clue.html', found: false },
-					{ name: 'Lugar #4', link: '/cities/fortaleza/place4/clue.html', found: false }
-				]
-			};
-
-			firebase.setProfile(firebase.db, profile);
-			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(profile));
+		if (RedirectHandler.shouldRedirect(window.location.origin)) {
+			window.location.assign('/login.html');
+			return;
 		}
 
-		foundAll = !places.find((p: any) => !p.found);
+		profile.subscribe((p) => {
+			profileValue = p;
+			foundAll = !profileValue.places.find((p: any) => !p.found);
+		});
 	});
 </script>
 
@@ -42,7 +40,7 @@
 {/if}
 
 <ul class="grid">
-	{#each profile.places as place}
+	{#each profileValue.places as place}
 		<li class="place shadow {place.found ? 'found' : ''}"><a href={place.link}>{place.name}</a></li>
 	{/each}
 </ul>
