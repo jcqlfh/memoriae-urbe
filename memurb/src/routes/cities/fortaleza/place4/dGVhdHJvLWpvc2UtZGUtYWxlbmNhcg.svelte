@@ -3,6 +3,8 @@
 	import ProfileUpdater from '../../../../../src/services/ProfileUpdater';
 	import RedirectHandler from '../../../../../src/services/RedirectHandler';
 	import { showFooter } from '../../../../../src/state/showFooter';
+	import { profile } from '../../../../../src/state/profile';
+	import { get } from 'svelte/store';
 
 	onMount(() => {
 		showFooter.update((value) => ({
@@ -19,6 +21,8 @@
 			name: 'Teatro José de Alencar',
 			link: '/cities/fortaleza/place4/teatro-jose-de-alencar.html',
 			found: true
+		}).then(() => {
+			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(get(profile)));
 		});
 	});
 </script>
