@@ -6,7 +6,6 @@ import { get } from 'svelte/store';
 
 const ProfileUpdater = {
 	updatePlace: function (place: Place) {
-		var result;
 		profile.update((value) => ({
 			...value,
 			places: value.places.map((p) => (p.name != place.name ? p : place))

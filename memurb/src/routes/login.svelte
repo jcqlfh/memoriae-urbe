@@ -6,7 +6,9 @@
 	import firebase from '../../src/services/Firebase';
 	import { onMount } from 'svelte';
 	import ProfileUpdater from '../../src/services/ProfileUpdater';
-	import type { Profile } from 'src/types/Profile';
+	import type { Profile } from '../../src/types/Profile';
+	import { profile } from '../../src/state/profile';
+	import { get } from 'svelte/store';
 
 	showFooter.update((value) => ({ show: false, path: '/home.html', text: 'Home' }));
 	showHeader.update((value) => false);
@@ -20,19 +22,19 @@
 
 				var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split('.')[1]));
 
-				var profile = await firebase.getProfile(firebase.db, payload?.email);
+				var user = await firebase.getProfile(firebase.db, payload?.email);
 
-				if (!profile)
-					profile = {
+				if (!user)
+					user = {
 						user: { name: payload?.name, email: payload?.email }
 					} as Profile;
 
-				var promise = ProfileUpdater.updatePriofile(profile as Profile);
+				var promise = ProfileUpdater.updatePriofile(user as Profile);
 
 				if (promise) {
 					promise
 						.then(() => {
-							localStorage.setItem('MEMURB_PROFILE', JSON.stringify(profile));
+							localStorage.setItem('MEMURB_PROFILE', JSON.stringify(get(profile)));
 
 							var redirect = '/home.html';
 							var redirectAfterLogin = localStorage.getItem('MEMURB_REDIRECT_AFTER_LOGIN');
