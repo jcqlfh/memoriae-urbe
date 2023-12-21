@@ -18,7 +18,7 @@ const firebase = {
 		return profilesList;
 	},
 	getProfile: async function (db: Firestore, email: string) {
-		return (await this.getProfiles(db)).find((p) => p.email == email);
+		return (await this.getProfiles(db)).find((p) => p.user.email == email);
 	},
 	setProfile: async function (db: Firestore, payload: Profile) {
 		await setDoc(doc(db, 'profiles', payload.user.email.replace('@', '_at_')), payload);
