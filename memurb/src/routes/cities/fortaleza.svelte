@@ -5,10 +5,11 @@
 	import { get } from 'svelte/store';
 	import RedirectHandler from '../../../src/services/RedirectHandler';
 	import { showFooter } from '../../../src/state/showFooter';
-	import { profile } from 'src/state/profile';
-	import type { Profile } from 'src/types/Profile';
+	import { profile } from '../../../src/state/profile';
+	import type { Profile } from '../../../src/types/Profile';
+	import type { Place } from '../../../src/types/Place';
 
-	let profileValue: Profile = {} as Profile;
+	let profileValue: Profile = { places: [] as Place[] } as Profile;
 	let foundAll: boolean;
 
 	onMount(() => {
