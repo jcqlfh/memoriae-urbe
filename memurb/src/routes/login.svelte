@@ -27,16 +27,24 @@
 						user: { name: payload?.name, email: payload?.email }
 					} as Profile;
 
-				ProfileUpdater.updatePriofile(profile as Profile);
+				var promise = ProfileUpdater.updatePriofile(profile as Profile);
 
-				var redirect = '/home.html';
-				var redirectAfterLogin = localStorage.getItem('MEMURB_REDIRECT_AFTER_LOGIN');
+				if (promise) {
+					promise
+						.then(() => {
+							localStorage.setItem('MEMURB_PROFILE', JSON.stringify(profile));
 
-				if (redirectAfterLogin) {
-					localStorage.removeItem('MEMURB_REDIRECT_AFTER_LOGIN');
-					redirect = redirectAfterLogin;
+							var redirect = '/home.html';
+							var redirectAfterLogin = localStorage.getItem('MEMURB_REDIRECT_AFTER_LOGIN');
+
+							if (redirectAfterLogin) {
+								localStorage.removeItem('MEMURB_REDIRECT_AFTER_LOGIN');
+								redirect = redirectAfterLogin;
+							}
+							window.location.assign(redirect);
+						})
+						.catch((e) => console.log(e));
 				}
-				window.location.assign(redirect);
 			} catch (exception) {
 				console.log('erro ao :' + exception);
 			}

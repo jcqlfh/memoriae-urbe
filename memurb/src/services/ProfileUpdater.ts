@@ -2,31 +2,20 @@ import type { Place } from '../types/Place';
 import { profile } from '../state/profile';
 import firebase from './Firebase';
 import type { Profile } from 'src/types/Profile';
+import { get } from 'svelte/store';
 
 const ProfileUpdater = {
 	updatePlace: function (place: Place) {
-		profile.update((value) => {
-			var prof = {
-				...value,
-				places: value.places.map((p) => (p.name != place.name ? p : place))
-			};
-
-			firebase
-				.setProfile(firebase.db, prof)
-				.then(() => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof)))
-				.catch((e) => console.log(e));
-			return prof;
-		});
+		var result;
+		profile.update((value) => ({
+			...value,
+			places: value.places.map((p) => (p.name != place.name ? p : place))
+		}));
+		return firebase.setProfile(firebase.db, get(profile));
 	},
-	updatePriofile: function (newProfile: Profile) {
-		profile.update((value) => {
-			var prof = { ...value, ...newProfile };
-			firebase
-				.setProfile(firebase.db, prof)
-				.then(() => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof)))
-				.catch((e) => console.log(e));
-			return prof;
-		});
+	updatePriofile: function (newProfile: Profile): Promise<void> {
+		profile.update((value) => ({ ...value, ...newProfile }));
+		return firebase.setProfile(firebase.db, get(profile));
 	}
 };
 
