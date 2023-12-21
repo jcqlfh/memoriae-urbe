@@ -5,6 +5,8 @@
 	import { KJUR, b64utoutf8 } from 'jsrsasign';
 	import firebase from '../services/Firebase';
 	import { onMount } from 'svelte';
+	import ProfileUpdater from 'src/services/ProfileUpdater';
+	import type { Profile } from 'src/types/Profile';
 
 	showFooter.update((value) => ({ show: false, path: '/home.html', text: 'Home' }));
 	showHeader.update((value) => false);
@@ -15,12 +17,26 @@
 		globalThis.handleCredentialResponse = async function (CredentialResponse: any) {
 			try {
 				var cred = CredentialResponse.credential;
-				var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split('.')[1]));
-				var user = await firebase.getProfile(firebase.db, payload?.email);
-				if (!user) user = await firebase.setProfile(firebase.db, payload);
 
-				localStorage.setItem('MEMURB_PROFILE', JSON.stringify(user));
-				window.location.assign('/home.html');
+				var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split('.')[1]));
+
+				var profile = await firebase.getProfile(firebase.db, payload?.email);
+
+				if (!profile)
+					profile = {
+						user: { name: payload?.name, email: payload?.email }
+					} as Profile;
+
+				ProfileUpdater.updatePriofile(profile as Profile);
+
+				var redirect = '/home.html';
+				var redirectAfterLogin = localStorage.getItem('MEMURB_REDIRECT_AFTER_LOGIN');
+
+				if (redirectAfterLogin) {
+					localStorage.removeItem('MEMURB_REDIRECT_AFTER_LOGIN');
+					redirect = redirectAfterLogin;
+				}
+				window.location.assign(redirect);
 			} catch (exception) {
 				console.log('erro ao :' + exception);
 			}
