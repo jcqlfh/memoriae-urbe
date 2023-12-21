@@ -8,7 +8,7 @@ const ProfileUpdater = {
 	updatePlace: function (place: Place) {
 		profile.update((value) => ({
 			...value,
-			places: value.places.map((p) => (p.name != place.name ? p : place))
+			places: value.places.map((p) => (p.code != place.code ? p : place))
 		}));
 		return firebase.setProfile(firebase.db, get(profile));
 	},
