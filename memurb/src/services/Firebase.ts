@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { Firestore, getFirestore, collection, doc, getDocs, setDoc } from 'firebase/firestore';
+import type { Profile } from 'src/types/Profile';
 
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = JSON.parse(import.meta.env.VITE_FIREBASE_CONFIG);
@@ -19,8 +20,8 @@ const firebase = {
 	getProfile: async function (db: Firestore, email: string) {
 		return (await this.getProfiles(db)).find((p) => p.email == email);
 	},
-	setProfile: async function (db: Firestore, payload: { email: string; name: string }) {
-		await setDoc(doc(db, 'profiles', payload.email), payload);
+	setProfile: async function (db: Firestore, payload: Profile) {
+		await setDoc(doc(db, 'profiles', payload.user.email), payload);
 		return payload;
 	}
 };

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import ProfileUpdater from 'src/services/ProfileUpdater';
-	import RedirectHandler from 'src/services/RedirectHandler';
-	import { showFooter } from 'src/state/showFooter';
+	import ProfileUpdater from '../../../../../src/services/ProfileUpdater';
+	import RedirectHandler from '../../../../../src/services/RedirectHandler';
+	import { showFooter } from '../../../../../src/state/showFooter';
 
 	onMount(() => {
 		showFooter.update((value) => ({

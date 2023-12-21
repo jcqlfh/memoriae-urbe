@@ -3,9 +3,9 @@
 	import { showFooter } from '../state/showFooter';
 	import { showHeader } from '../state/showHeader';
 	import { KJUR, b64utoutf8 } from 'jsrsasign';
-	import firebase from '../services/Firebase';
+	import firebase from '../../src/services/Firebase';
 	import { onMount } from 'svelte';
-	import ProfileUpdater from 'src/services/ProfileUpdater';
+	import ProfileUpdater from '../../src/services/ProfileUpdater';
 	import type { Profile } from 'src/types/Profile';
 
 	showFooter.update((value) => ({ show: false, path: '/home.html', text: 'Home' }));
