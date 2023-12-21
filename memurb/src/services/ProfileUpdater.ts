@@ -11,17 +11,19 @@ const ProfileUpdater = {
 				places: value.places.map((p) => (p.name != place.name ? p : place))
 			};
 
-			firebase.setProfile(firebase.db, prof);
-			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof));
+			firebase
+				.setProfile(firebase.db, prof)
+				.then((data) => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(data)));
 			return prof;
 		});
 	},
 	updatePriofile: function (newProfile: Profile) {
 		profile.update((value) => {
-			firebase.setProfile(firebase.db, newProfile);
-			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(newProfile));
-
-			return newProfile;
+			var prof = { ...value, ...newProfile };
+			firebase
+				.setProfile(firebase.db, prof)
+				.then((data) => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(data)));
+			return prof;
 		});
 	}
 };
