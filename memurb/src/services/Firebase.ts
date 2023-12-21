@@ -11,17 +11,31 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const firebase = {
 	db: getFirestore(app),
-	getProfiles: async function (db: Firestore) {
+	getProfiles: function (db: Firestore): Profile[] {
+		var profilesList = null;
 		const profilesCol = collection(db, 'profiles');
-		const profilesSnapshot = await getDocs(profilesCol);
-		const profilesList = profilesSnapshot.docs.map((doc) => doc.data());
+		getDocs(profilesCol)
+			.then((profilesSnapshot) => (profilesList = profilesSnapshot.docs.map((doc) => doc.data())))
+			.catch((e) => {
+				console.log(e);
+				profilesList = [];
+			});
+		while (!profilesList) console.log('getting profile list');
 		return profilesList;
 	},
-	getProfile: async function (db: Firestore, email: string) {
-		return (await this.getProfiles(db)).find((p) => p.user.email == email);
+	getProfile: function (db: Firestore, email: string) {
+		this.getProfiles(db).find((p) => p.user.email == email);
 	},
-	setProfile: async function (db: Firestore, payload: Profile) {
-		return await setDoc(doc(db, 'profiles', payload.user.email.replace('@', '_at_')), payload);
+	setProfile: function (db: Firestore, payload: Profile) {
+		var newProf = null;
+		setDoc(doc(db, 'profiles', payload.user.email.replace('@', '_at_')), payload)
+			.then((profile) => (newProf = profile))
+			.catch((e) => {
+				console.log(e);
+				newProf = {};
+			});
+		while (!newProf) console.log('setting profile');
+		return newProf;
 	}
 };
 
