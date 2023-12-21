@@ -13,7 +13,7 @@ const ProfileUpdater = {
 
 			firebase
 				.setProfile(firebase.db, prof)
-				.then((data) => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(data)))
+				.then(() => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof)))
 				.catch((e) => console.log(e));
 			return prof;
 		});
@@ -23,7 +23,7 @@ const ProfileUpdater = {
 			var prof = { ...value, ...newProfile };
 			firebase
 				.setProfile(firebase.db, prof)
-				.then((data) => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(data)))
+				.then(() => localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof)))
 				.catch((e) => console.log(e));
 			return prof;
 		});

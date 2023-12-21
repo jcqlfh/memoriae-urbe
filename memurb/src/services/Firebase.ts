@@ -20,11 +20,8 @@ const firebase = {
 	getProfile: async function (db: Firestore, email: string) {
 		return (await this.getProfiles(db)).find((p) => p?.user?.email == email);
 	},
-	setProfile: async function (db: Firestore, payload: Profile): Promise<Profile> {
-		setDoc(doc(db, 'profiles', payload.user.email), payload)
-			.then((doc) => Promise.resolve(doc))
-			.catch((e) => Promise.reject(e));
-		return payload;
+	setProfile: function (db: Firestore, payload: Profile): Promise<void> {
+		return setDoc(doc(db, 'profiles', payload.user.email), payload);
 	}
 };
 
