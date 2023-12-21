@@ -20,7 +20,7 @@
 
 				var payload: any = KJUR.jws.JWS.readSafeJSONString(b64utoutf8(cred.split('.')[1]));
 
-				var profile = await firebase.getProfile(firebase.db, payload?.email?.replace('@', '_at_'));
+				var profile = await firebase.getProfile(firebase.db, payload?.email);
 
 				if (!profile)
 					profile = {
