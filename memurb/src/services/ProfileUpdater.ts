@@ -12,8 +12,7 @@ const ProfileUpdater = {
 			};
 
 			firebase.setProfile(firebase.db, prof);
-			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(profile));
-
+			localStorage.setItem('MEMURB_PROFILE', JSON.stringify(prof));
 			return prof;
 		});
 	},
