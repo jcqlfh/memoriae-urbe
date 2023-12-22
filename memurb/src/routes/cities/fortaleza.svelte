@@ -20,7 +20,7 @@
 			text: 'Home'
 		}));
 
-		if (RedirectHandler.shouldRedirect(window.location.origin)) {
+		if (RedirectHandler.shouldRedirect(window.location.pathname)) {
 			window.location.assign('/login.html');
 			return;
 		}
