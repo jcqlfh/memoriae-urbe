@@ -8,6 +8,7 @@
 	import { profile } from '../../../src/state/profile';
 	import type { Profile } from '../../../src/types/Profile';
 	import type { Place } from '../../../src/types/Place';
+	import ProfileUpdater from 'src/services/ProfileUpdater';
 
 	let profileValue: Profile = { places: [] as Place[] } as Profile;
 	let foundAll: boolean;
@@ -23,7 +24,7 @@
 			window.location.assign('/login.html');
 			return;
 		}
-		profileValue = get(profile);
+		profileValue = ProfileUpdater.getProfile();
 		foundAll = !profileValue.places.find((p: any) => !p.found);
 	});
 </script>

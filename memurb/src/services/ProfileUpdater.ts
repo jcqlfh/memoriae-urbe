@@ -34,6 +34,18 @@ const ProfileUpdater = {
 
 		profile.update((value) => ({ ...value, ...newProfile }));
 		return firebase.setProfile(firebase.db, get(profile));
+	},
+	getProfile: function () {
+		var storedProfile = JSON.parse(localStorage.getItem('MEMURB_PROFILE') || '{}') as Profile;
+
+		if (storedProfile.user) {
+			profile.update((value) => ({
+				...value,
+				...storedProfile
+			}));
+		}
+
+		return get(profile);
 	}
 };
 
