@@ -1,7 +1,7 @@
 import type { Place } from '../types/Place';
 import { profile } from '../state/profile';
 import firebase from './Firebase';
-import type { Profile } from 'src/types/Profile';
+import type { Profile } from '../../src/types/Profile';
 import { get } from 'svelte/store';
 
 const ProfileUpdater = {

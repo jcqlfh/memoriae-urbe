@@ -8,7 +8,7 @@
 	import { profile } from '../../../src/state/profile';
 	import type { Profile } from '../../../src/types/Profile';
 	import type { Place } from '../../../src/types/Place';
-	import ProfileUpdater from 'src/services/ProfileUpdater';
+	import ProfileUpdater from '../../../src/services/ProfileUpdater';
 
 	let profileValue: Profile = { places: [] as Place[] } as Profile;
 	let foundAll: boolean;
