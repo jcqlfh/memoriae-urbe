@@ -1,13 +1,13 @@
-Antes eram três, agora só um restou. 
+Antes eram três, agora só um restou.
 
-Ainda sou bonito e charmoso. 
+Ainda sou bonito e charmoso.
 
 O baobá que é símbolo de resistência,  
 
-Reside aqui não por acaso. 
+Reside aqui não por acaso.
 
 Te todos que quiserem sombra,  
 
-Posso abrigar. 
+Posso abrigar.
 
-Mesmo se está aqui só para passear. 
+Mesmo se está aqui só para passear.

@@ -1,7 +1,7 @@
-Palco de sorrisos e tristezas, 
+Palco de sorrisos e tristezas,
 
-Eu tenho nome de gigante. 
+Eu tenho nome de gigante.
 
-Mestre da escrita, 
+Mestre da escrita,
 
-Sou seu lugar retumbante. 
+Sou seu lugar retumbante.

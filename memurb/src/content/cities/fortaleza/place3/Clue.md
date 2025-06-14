@@ -1,7 +1,7 @@
-Aqui o sol se põe mais bonito, 
+Aqui o sol se põe mais bonito,
 
-Banhado pelo mar, me ergo sobre ele. 
+Banhado pelo mar, me ergo sobre ele.
 
-De inglês não tenho muito, 
+De inglês não tenho muito,
 
-Mas de Fortaleza tenho tudo. 
+Mas de Fortaleza tenho tudo.
